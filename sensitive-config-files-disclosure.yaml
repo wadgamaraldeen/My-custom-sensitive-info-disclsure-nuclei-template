@@ -12,6 +12,7 @@ http:
   - method: GET
     path:
       - "{{BaseURL}}/app/config.js"
+      - "{{BaseURL}}/env.env"
       - "{{BaseURL}}/env.js"
       - "{{BaseURL}}/.ENV"
       - "{{BaseURL}}/.env"
@@ -31,6 +32,8 @@ http:
       - "{{BaseURL}}/app/config"
       - "{{BaseURL}}/admin/config"
       - "{{BaseURL}}/app/configuration"
+      - "{{BaseURL}}/configuration"
+      - "{{BaseURL}}/configuration.yaml"
       - "{{BaseURL}}/app/env.js"
       - "{{BaseURL}}/app/env.json"
       - "{{BaseURL}}/server.js"
@@ -40,6 +43,7 @@ http:
       - "{{BaseURL}}/app/server.js"
       - "{{BaseURL}}/app/server.json"
       - "{{BaseURL}}/config.yaml"
+      - "{{BaseURL}}/config.yml"
       - "{{BaseURL}}/users"
       - "{{BaseURL}}/user"
       - "{{BaseURL}}/v1/users"
@@ -108,12 +112,21 @@ http:
       - "{{BaseURL}}/api/users.json"
       - "{{BaseURL}}/server-status"
       - "{{BaseURL}}/users.csv"
+      - "{{BaseURL}}/user.csv"
       - "{{BaseURL}}/env.js"
       - "{{BaseURL}}/debug/pprof/"
       - "{{BaseURL}}/debug/pprof/cmdline?debug=1"
       - "{{BaseURL}}/config"
       - "{{BaseURL}}/phpinfo"
       - "{{BaseURL}}/phpfinfo"
+      - "{{BaseURL}}/app.js.map"
+      - "{{BaseURL}}/root"
+      - "{{BaseURL}}/Index Of"
+      - "{{BaseURL}}/index"
+      - "{{BaseURL}}/index.php"
+      - "{{BaseURL}}/index.js"
+      - "{{BaseURL}}/admin.js"
+      - "{{BaseURL}}/admin.json"
 
     matchers-condition: and
     matchers:
@@ -164,6 +177,12 @@ http:
           - "db_password"
           - "AWS_ACCESS_KEY_ID"
           - "AWS_SECRET_ACCESS_KEY"
+          - "index Of"
+          - "Authorization: Bearer"
+          - "Bearer"
+          - "Authorization Bearer"
+          - "config.js"
+          - "admin.js"
         condition: or
 
       - type: word
@@ -172,5 +191,7 @@ http:
           - "application/javascript"
           - "application/json"
           - "text/javascript"
+          - "text/yaml"
+          - "text/yml"
           - "text/plain"
         condition: or
