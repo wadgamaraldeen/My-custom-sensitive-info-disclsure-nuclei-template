@@ -13,6 +13,12 @@ http:
     path:
       - "{{BaseURL}}/app/config.js"
       - "{{BaseURL}}/env.env"
+      - "{{BaseURL}}/Dockerfile"
+      - "{{BaseURL}}/settings.py"
+      - "{{BaseURL}}/env.env"
+      - "{{BaseURL}}/env.env"
+      - "{{BaseURL}}/env.env"
+      - "{{BaseURL}}/.local.env"
       - "{{BaseURL}}/env.js"
       - "{{BaseURL}}/.ENV"
       - "{{BaseURL}}/.env"
@@ -127,6 +133,9 @@ http:
       - "{{BaseURL}}/index.js"
       - "{{BaseURL}}/admin.js"
       - "{{BaseURL}}/admin.json"
+      - "{{BaseURL}}/geoserver/web/"
+      - "{{BaseURL}}/geoserver/ows?service=wfs"
+      - "{{BaseURL}}/admin.json"
 
     matchers-condition: and
     matchers:
@@ -183,6 +192,14 @@ http:
           - "Authorization Bearer"
           - "config.js"
           - "admin.js"
+          - "sk_live_"
+          - "pk_live_"
+          - "sk-"
+          - "jwt_secret"
+          - "JWT_SECRET"
+          - "AWS_ACCESS_SECRET_KEY"
+          - "authorization_bearer:"
+          - "geoserver"
         condition: or
 
       - type: word
